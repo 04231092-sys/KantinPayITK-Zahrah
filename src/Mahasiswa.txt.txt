@@ -1,0 +1,21 @@
+class Mahasiswa(val nama: String, private var pin: String, private var saldo: Double) {
+
+    fun verifikasiPin(inputPin: String): Boolean {
+        return inputPin == pin
+    }
+
+    fun getSaldo(): Double {
+        return saldo
+    }
+
+    fun potongSaldo(jumlah: Double): Boolean {
+        return if (saldo >= jumlah) {
+            saldo -= jumlah
+            true
+        } else false
+    }
+
+    fun topUp(jumlah: Double) {
+        if (jumlah > 0) saldo += jumlah
+    }
+}
